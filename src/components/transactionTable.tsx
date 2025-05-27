@@ -20,7 +20,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { financeCalculations } from '@/utils/financeCalculations';
 import { Grid } from '@mui/material';
 import { formatCurrency } from '@/utils/formatting';
-import IconComponents from "@/components/iconComponents";
+import IconComponents from "@/components/common/iconComponents";
 import { compareDesc, parseISO } from 'date-fns';
 import { useAppContext } from '@/contexts/AppContext';
 import useMonthlyTransactions from '@/hooks/useMonthlyTransactions';

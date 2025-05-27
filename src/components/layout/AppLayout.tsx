@@ -4,17 +4,20 @@ import * as React from 'react';
 import {
   AppBar,
   Box,
+  Button,
   IconButton,
   Toolbar,
   Typography,
 } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
-import Sidebar from "@/components/sidebar";
+import LogoutIcon from '@mui/icons-material/Logout';
+import Sidebar from "@/components/common/sidebar";
 import { useAppContext } from '@/contexts/AppContext';
 import { isFireStoreError } from "@/utils/errorHandling";
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '@/firebase';
+import { db } from '@/lib/firebase';
 import { Transaction } from '@/types';
+import { useAuth } from '@/contexts/AuthContext';
 
 const drawerWidth = 240;
 
@@ -26,6 +29,7 @@ export default function AppLayout({children}: Props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
   const {setTransactions, setIsLoading} = useAppContext();
+  const {logout} = useAuth()
 
   //firestoreのデータを全て取得
   React.useEffect(() => {
@@ -69,6 +73,14 @@ export default function AppLayout({children}: Props) {
     }
   };
 
+  const handleLogout = async() => {
+    try{
+      await logout()
+    }catch(error){
+      console.error('Logout failed:', error);
+    }
+  }
+
   return (
     <Box 
       sx={{
@@ -86,7 +98,7 @@ export default function AppLayout({children}: Props) {
           ml: { md: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{display: "flex", justifyContent: "space-between"}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -99,6 +111,14 @@ export default function AppLayout({children}: Props) {
           <Typography variant="h6" noWrap component="div">
             Next.JS 家計簿
           </Typography>
+          <Button 
+            sx={{color: "white"}} 
+            onClick={handleLogout}
+            startIcon={<LogoutIcon />}
+            variant='text'
+          >
+            ログアウト
+          </Button>
         </Toolbar>
       </AppBar>
       

@@ -1,6 +1,6 @@
 'use client'
 
-import { db } from "@/firebase";
+import { db } from "@/lib/firebase";
 import { Transaction } from "@/types";
 import { isFireStoreError } from "@/utils/errorHandling";
 import { Schema } from "@/validations/schema";

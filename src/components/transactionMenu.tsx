@@ -20,7 +20,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import DailySummary from "./dailySummary";
 import { Transaction } from "@/types";
 import { formatCurrency } from "@/utils/formatting";
-import IconComponents from "@/components/iconComponents";
+import IconComponents from "@/components/common/iconComponents";
 import { useAppContext } from "@/contexts/AppContext";
 
 interface TransactionProps {
