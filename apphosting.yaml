@@ -7,37 +7,37 @@ runConfig:
 
 env:
   - variable: NEXT_PUBLIC_FIREBASE_API_KEY
-    value: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: AIzaSyBHn9dVWCKx2RpqYlTjOnuq491L-qYGn-I
     availability:
       - BUILD
       - RUNTIME
 
   - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
-    value: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: householdnextjs.firebaseapp.com
     availability:
       - BUILD
       - RUNTIME
 
   - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
-    value: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: householdnextjs
     availability:
       - BUILD
       - RUNTIME
 
   - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
-    value: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: householdnextjs.firebasestorage.app
     availability:
       - BUILD
       - RUNTIME
 
   - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
-    value: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+    value: 90379289339
     availability:
       - BUILD
       - RUNTIME
 
   - variable: NEXT_PUBLIC_FIREBASE_APP_ID
-    value: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: 1:90379289339:web:9b7dbedffbb49041f8e65e
     availability:
       - BUILD
       - RUNTIME
